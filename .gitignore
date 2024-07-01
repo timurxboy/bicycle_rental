@@ -5,7 +5,6 @@ __pycache__/
 bot.sh
 # C extensions
 *.so
-.idea
 
 # Distribution / packaging
 .Python
