@@ -1,5 +1,6 @@
-from .user import LoginSerializer
+from .user import LoginSerializer, RegisterSerializer
 
 __all__ = [
     'LoginSerializer',
+    'RegisterSerializer'
 ]

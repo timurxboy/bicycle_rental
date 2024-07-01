@@ -1,5 +1,6 @@
-from .user import LoginView
+from .user import LoginView, RegisterView
 
 __all__ = [
-    'LoginView'
+    'LoginView',
+    'RegisterView'
 ]
