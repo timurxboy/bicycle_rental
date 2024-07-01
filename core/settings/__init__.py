@@ -19,6 +19,7 @@ from .installed_apps import INSTALLED_APPS
 from .JWT import SIMPLE_JWT
 from .middleware import MIDDLEWARE
 from .rest_framework import REST_FRAMEWORK
+from .spectacular import SPECTACULAR_SETTINGS
 from .templates import TEMPLATES
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -85,3 +86,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SPECTACULAR_SETTINGS = SPECTACULAR_SETTINGS

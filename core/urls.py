@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.settings.swagger import swagger_urlpatterns
+from core import spectacular_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('apps.main.urls'))
 ]
 
-urlpatterns += swagger_urlpatterns
+urlpatterns += spectacular_urls.urlpatterns

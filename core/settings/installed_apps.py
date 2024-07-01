@@ -12,7 +12,8 @@ LOCAL_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'drf_yasg',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
     'rest_framework',
 ]
 
