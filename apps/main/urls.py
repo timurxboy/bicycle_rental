@@ -1,13 +1,19 @@
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenBlacklistView
-from apps.main.views import LoginView, RegisterView
+from apps.main.views import RegisterView, BicycleListAPIView, RentalBice, RentalBiceHistory, RentalBiceHistoryListAPIView
+
 
 urlpatterns = [
-    path('register/', RegisterView.as_view(), name='register'),
-    path('login/', LoginView.as_view(), name='login'),
-    path('logout/', TokenBlacklistView.as_view(), name='logout'),
-    path('login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('auth/register/', RegisterView.as_view(), name='register'),
+    path('auth/token/', TokenObtainPairView.as_view(), name='token'),
+    path('auth/login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('auth/logout/', TokenBlacklistView.as_view(), name='logout'),
 
-    # path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('bicycles/', BicycleListAPIView.as_view(), name='bicycle_list'),
+    path('rental/start/', RentalBice.as_view(), name='rental_start'),
+    path('rental/end/', RentalBiceHistory.as_view(), name='rental_end'),
+    path('rental/history/', RentalBiceHistoryListAPIView.as_view(), name='rental_history'),
+
+
 ]
+

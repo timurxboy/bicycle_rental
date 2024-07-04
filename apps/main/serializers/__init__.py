@@ -1,6 +1,10 @@
-from .user import LoginSerializer, RegisterSerializer
+from .user import UserRegisterSerializer
+from .bicycle import BicycleSerializer
+from .rental import RentalSerializer, RentalHistorySerializer
 
 __all__ = [
-    'LoginSerializer',
-    'RegisterSerializer'
+    'UserRegisterSerializer',
+    'BicycleSerializer',
+    'RentalSerializer',
+    'RentalHistorySerializer'
 ]

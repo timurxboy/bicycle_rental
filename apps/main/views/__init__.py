@@ -1,6 +1,11 @@
-from .user import LoginView, RegisterView
+from .user import RegisterView
+from .bicycle import BicycleListAPIView
+from .rental import RentalBice, RentalBiceHistory, RentalBiceHistoryListAPIView
 
 __all__ = [
-    'LoginView',
-    'RegisterView'
+    'RegisterView',
+    'BicycleListAPIView',
+    'RentalBice',
+    'RentalBiceHistory',
+    'RentalBiceHistoryListAPIView'
 ]
