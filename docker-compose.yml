@@ -1,9 +1,9 @@
 version: '3.8'
 services:
-  redstaroxus:
+  postgres-db:
     image: postgres:15-alpine
     restart: always
-    container_name: ${CONTAINER_NAME}
+    container_name: ${DB_CONTAINER_NAME}
     environment:
       TZ: "Asia/Tashkent"
       PGTZ: "Asia/Tashkent"
@@ -14,8 +14,23 @@ services:
     ports:
       - ${DB_PORT}:5432
     volumes:
-      - redd:/var/lib/postgresql/data
+      - postgres-volume:/var/lib/postgresql/data
     env_file:
       - .env
+
+  nrg-redis:
+    image: redis:latest
+    command: redis-server --databases 32
+    container_name: ${REDIS_CONTAINER_NAME}
+    restart: always
+    volumes:
+      - redis:/var/lib/redis
+      - redis-config:/usr/local/etc/redis/redis.conf
+    ports:
+      - ${REDIS_PORT}:6379
+
+
 volumes:
-  redd:
+  postgres-volume:
+  redis:
+  redis-config:
