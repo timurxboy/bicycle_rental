@@ -20,7 +20,8 @@ from core import spectacular_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('apps.main.urls'))
+    path('api/', include('apps.main.urls.main')),
+    path('auth/', include('apps.main.urls.auth'))
 ]
 
 urlpatterns += spectacular_urls.urlpatterns
